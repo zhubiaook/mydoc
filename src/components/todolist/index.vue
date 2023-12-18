@@ -29,15 +29,26 @@
         </div>
         {{ active }} / {{ all }}
     </div>
+    <!--
+        mousemoive Event
+    -->
+    <div>
+        <h2>
+            hello X: {{ x }}, Y: {{ y }}
+        </h2>
+    </div>
 </template>
 
 <script setup>
 // 得力于Vue3 的Composition API可以将不不同功能的数据放到单独的文件中进行维护，使得主体变得清爽
 import countNum from '../../utils/count'
+import { useMouse } from '../../utils/mouse';
 import useTodos from '../../utils/use-todos'
 
 let { count, color, add } = countNum();
 let { title, todos, addTodo, active, all, allDone, clear } = useTodos();
+let { x, y } = useMouse();
+
 </script>
 
 <style scoped>

@@ -3,7 +3,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import Home from "../pages/home.vue";
 import About from "../pages/about.vue";
 
-const routes = [
+let routes = [
   {
     path: "/",
     name: "Home",
@@ -20,5 +20,4 @@ const router = createRouter({
   history: createWebHashHistory(),
   routes,
 });
-
 export default router;

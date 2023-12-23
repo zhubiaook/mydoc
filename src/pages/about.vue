@@ -1,3 +1,11 @@
 <template>
-    <h5>About Page</h5>
+    <div>
+        about page
+    </div>
 </template>
+
+<script setup>
+
+</script>
+
+<style  scoped></style>

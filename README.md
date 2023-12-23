@@ -13,6 +13,9 @@
 - 服务器端渲染支持
 - 轻量 压缩后的体积只有1kb左右
 
+## Pinia的定位
+![image](https://github.com/zhubiaook/mydoc/assets/30363122/080f0c29-e9e9-4863-9f80-b451eadf27d3)
+
 ## 创建项目
 
 1. 创建mydoc项目

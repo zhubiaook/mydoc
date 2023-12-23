@@ -9,17 +9,15 @@
 </template>
 
 <script setup>
-import { storeToRefs } from 'pinia';
-import { useCounterStore } from '../store/counter'
+import { computed } from 'vue';
+import { useStore } from 'vuex';
 
-const store = useCounterStore()
-
-// 解构函数保持响应式
-const { count, double } = storeToRefs(store)
-
-store.increment()
-store.increment()
-
+let store = useStore()
+let double = computed(() => store.getters.double)
+let count = computed(() => store.state.count)
+store.commit('increment')
+store.commit('increment')
+store.dispatch('asyncAdd')
 </script>
 
 <style scoped></style>

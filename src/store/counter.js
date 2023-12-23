@@ -1,22 +1,33 @@
 /*
- * Setup Store 即 Composition API
+ * Vuex
  */
 
-import { defineStore } from "pinia";
-import { computed, ref } from "vue";
+import { createStore } from "vuex";
 
-// id: counter必须唯一
-const useCounterStore = defineStore("counter", () => {
-  const count = ref(0);
-
-  function increment() {
-    count.value++;
-  }
-
-  const double = computed(() => {
-    return 2 * count.value;
-  });
-
-  return { count, double, increment };
+const store = createStore({
+  state() {
+    return {
+      count: 0,
+    };
+  },
+  getters: {
+    double: (state) => {
+      return state.count * 2;
+    },
+  },
+  mutations: {
+    increment(state) {
+      state.count++;
+    },
+  },
+  actions: {
+    asyncAdd({ commit }) {
+      setTimeout(() => {
+        commit("increment");
+        commit("increment");
+      }, 1000);
+    },
+  },
 });
-export { useCounterStore };
+
+export { store };

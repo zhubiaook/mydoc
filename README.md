@@ -1,6 +1,6 @@
 # mydoc
 
-组件间共享数据方法二：vuex
+实现一个类似vue-router的Vue插件
 
 ## 创建项目
 
@@ -10,9 +10,12 @@
    npm create vite@latest mydoc
    ```
 
-2. 安装vuex
+2. 实现一个类似vue-router的Vue插件
    
    ```bash
-   npm install vuex@next
+   tree src/router/myrouter
+   src/router/myrouter
+   ├── index.js
+   ├── router-link.vue
+   └── router-view.vue
    ```
-
